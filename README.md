@@ -1,66 +1,50 @@
-# Polytrader AI Project
+# 🧠 Polytrader AI
 
-## Overview
+**Polytrader AI** is an intelligent autonomous trading agent for **Polymarket** prediction markets. This project brings together AI research, LangChain, and on-chain market data to help users make smarter prediction market trades.
 
-Welcome to the Polytrader AI project! This repository consists of two main parts:
+## 🚀 Features
 
-- **backend/**: A Python-based AI agent using LangChain, LangGraph, and related libraries to analyze and trade on Polymarket.
-- **frontend/**: A Next.js application with TailwindCSS, Shadcn UI, and TypeScript for the user-facing interface.
+### 🤖 AI Trading Agent (Poly)
 
-Poly is the trading agent, and it is capable of:
+Poly is the main AI agent that can:
 
-- Performing deep research on a given market using [Exa](https://exa.ai/) and a recursive process to ask better and more refined questions about the market in question.
-  - Inspiration for my implementation of Deep Research comes from `dzhng/deep-research`, which can be found [here](https://github.com/dzhng/deep-research).
-- Analyze the market conditions, and produce a summary of the current state of the market.
-- Decide whether to buy, sell, or hold a position, based on the market conditions and the agent's own analysis.
+- 🧠 **Perform Deep Research**  
+  Uses [Exa](https://exa.ai/) to recursively ask questions and gather data for better market understanding (inspired by [`dzhng/deep-research`](https://github.com/dzhng/deep-research)).
 
-On the web app, you can see the agent's thought process and, if it does decide to make a trade, you can confirm or reject the trade.
+- 📊 **Analyze Market Conditions**  
+  Poly interprets market data and provides a human-readable summary of the current state.
 
-## Getting Started (High-Level)
+- ⚖️ **Make Trade Decisions**  
+  Based on analysis, Poly decides whether to **Buy**, **Sell**, or **Hold**, and allows you to confirm or reject the move.
 
-1. **Clone this repository**
+### 🔮 SN6 API Integration
 
-2. Set up Environment Variables
+We’ve integrated the [SN6 v0 API](https://ifgames.win/api/docs) to pull off-chain predictions from a validator network.
 
-Copy `.env.example` in the `backend/` directory (and similarly .env.example in `frontend/` if available) to `.env` (or `.env.local` for the frontend), then fill in the required values.
-For the backend, ensure the environment variables that your agent or Graph nodes need (like API keys) are properly populated.
-For the frontend, any variables you need at build time can be placed in `.env.local` or shared with `NEXT_PUBLIC_` prefix. Backend Setup
-See `backend/README.md` for details on installing Python dependencies, running the AI agent, or using the LangGraph server.
+- ✅ Create and track events
+- 🔍 Fetch real-time miner predictions
+- 🧠 Use **community predictions** to influence AI decision-making
 
-3. Frontend Setup
-   See `frontend/README.md` for more information about installing Node.js dependencies and starting the Next.js dev server.
+## 🌐 Frontend
 
-4. Running Locally
-   - Backend: Typically run `make lg-server` from the `backend/` directory to start the agent’s local dev environment.
-   - Frontend: From the `frontend/` folder, install dependencies with `pnpm install` and run `pnpm dev`.
+Built with **Next.js**, **TailwindCSS**, and **Shadcn UI**, the frontend allows you to:
 
-## What you will need
+- 🔎 Browse AI research results
+- 🧩 View Poly’s thought process
+- ✅ Approve or reject trades manually
 
-- OpenAI API key
-- Exa API key
-- Tavily (not actively being used) API key
-- Web3 wallet (e.g. MetaMask, Phantom, etc.)
 
-## Configuring Polymarket
+## 🧱 Backend
 
-A detailed guide on how to configure Polymarket can be found in the `backend/README.md` file, [here](backend/README.md#configuring-polymarket).
+Powered by:
 
-## Structure
+- **LangChain** + **LangGraph** for AI workflows
+- **Exa** for recursive market research
+- **SN6 API** for external prediction insights
+- **Polymarket API** for real-time market data
 
-```
-├── backend/
-│ ├── src/
-│ ├── tests/
-│ ├── Makefile
-│ ├── ...
-│ └── pyproject.toml
-├── frontend/
-│ ├── app/
-│ ├── components/
-│ ├── lib/
-│ ├── types/
-│ ├── ...
-│ ├── package.json
-│ └── pnpm-lock.yaml
-└── README.md (this file)
-```
+
+## 🤝 Contributing
+
+PRs and issues welcome! Please open an issue first if you want to propose a feature or bug fix.
+
